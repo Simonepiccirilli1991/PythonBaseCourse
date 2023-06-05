@@ -12,3 +12,10 @@ else:
 ## per concatenare le condizione negli if:
 if x > y or x < y:
     print("x it not equal to y")
+## compare con and
+#i python puoi concaterare if su stesso oggetto senza and
+if x < 100 and x > 1:
+    print(f"{x}")
+#diventa , si puo usare solo in python
+if 100 > x > 1:
+    print(f"{x}")
