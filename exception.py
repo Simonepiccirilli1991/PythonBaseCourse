@@ -24,3 +24,20 @@ while True:
         break
 
 print(f"X values is {x}")
+
+#piu completa usango una fuction
+def main():
+    x = get_int()
+    print(f"X values is {x}")
+
+
+def get_int():
+    while True:
+        try:
+            return int(input("What's x ? "))
+        except ValueError:
+            print("the input is not a integer")
+            #pass e usato per non fare nulla, in casso di eccezzione
+
+main()
+
