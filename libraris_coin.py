@@ -14,3 +14,10 @@ from random import randint as roll
 
 x = roll(1,10)
 print(x)
+
+#shuffle, mischia oggetti interni a una lista ordine sara mischiato
+from random import shuffle
+cards = ["queen", "ace", "jack", "king","jolly"]
+shuffle(cards)
+for card in cards:
+    print(card)
