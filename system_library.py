@@ -14,3 +14,11 @@ elif len(sys.argv) > 2:
 else:
     print("hello, my name is", sys.argv[1])
 # se si passa argomento cosi python system_library.py "Simone Piccirilli"  <- tutto quello "" viene preso come un solo argomento
+
+#altro modo usando sys.exit , una volta printato esce dal programma
+if len(sys.argv) < 2:
+    sys.exit("Too few argoment")
+elif len(sys.argv) > 2:
+    sys.exit("Too many arguments")
+
+print("hello, my name is", sys.argv[1])
