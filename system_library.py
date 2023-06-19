@@ -22,3 +22,10 @@ elif len(sys.argv) > 2:
     sys.exit("Too many arguments")
 
 print("hello, my name is", sys.argv[1])
+
+#ora useremo slice per tagliare una lista
+if len(sys.argv) < 2:
+    sys.exit("Too few argoment")
+#gli stiamo dicendo di partire dal valore 1 anziche 0 e continaure per tutto il restante, in questo modo nn printeremo il comando
+for name in sys.argv[1:]:
+    print("hello, my name is", sys.argv[1])
