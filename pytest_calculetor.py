@@ -1,4 +1,5 @@
 from calculetor import square
+import pytest
 ##posso usare una libreria per fare in test, pytest quindi la installo con pip e refactoro il codice in maniera seguente
 #devo mettere test davanti come primo nome se no nn lo legge
 def test_calculator():
@@ -13,3 +14,8 @@ def test_negative():
 
 def test_zero():
     assert square(0) == 0
+
+
+def test_string():
+    with pytest.raises(TypeError):
+        square("cat")
