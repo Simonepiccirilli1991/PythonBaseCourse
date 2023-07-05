@@ -8,3 +8,15 @@ file.close()
 #per convenzione diventa
 with open("names.txt", "a") as file:
     file.write(f"{name}\n")#in questo modo il close lo gestisce automatico
+
+#per leggere
+with open("names.txt","r") as file: #r sta per read
+    lines = file.readlines() # questo metodo torna un lista con tutte le linee
+for line in lines:
+    print("Hello, ",line.rstrip())
+
+
+# per convenzione lo facciamo diventare
+with open("names.txt","r") as file: #r sta per read
+    for line in file: #python in automatico prende tutte le linee del file anche senza specificare
+        print("Hello, ",line.rstrip())
