@@ -20,3 +20,16 @@ for line in lines:
 with open("names.txt","r") as file: #r sta per read
     for line in file: #python in automatico prende tutte le linee del file anche senza specificare
         print("Hello, ",line.rstrip())
+
+#per leggere dal file e riusare i valori
+names = []
+with open("names.txt") as file:# se non passiamo argomento di default e read
+    for line in file:
+        names.append(line.rstrip())
+for name in sorted(names):
+    print(f"hello, {name}")
+
+# che puo diventare
+with open("names.txt") as file:
+    for line in sorted(file):
+        print(f"hello, {line}")
