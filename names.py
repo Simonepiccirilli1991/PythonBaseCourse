@@ -46,5 +46,26 @@ with open("students.csv") as file:
 
 # in python si posso assegnare 2 o + variabili e un file che sara splittato
 with open("students.csv") as file:
-    name, house = line.rstrip().split(",") #siccome so gia che i valori sono 2, assegno a 2 variabili
-    print(f"{name} is in {house}")
+    for line in file:
+        name, house = line.rstrip().split(",") #siccome so gia che i valori sono 2, assegno a 2 variabili
+        print(f"{name} is in {house}")
+
+#ora se noi volessimo ordinarli per nome possiamo fare cosi
+students = []
+with open("students.csv") as file:
+    for line in file:
+        name, house = line.rstrip().split(",")
+        student = {} #creo un dictionari dove assegnare chiavi e valori
+        student["name"] = name
+        student["house"] = house
+        students.append(student)
+        #tutto queste 3 righe posso farle diventare cosi
+        student = {"name": name, "house": house}
+        students.append()
+
+def get_name(student):
+    return student["name"]
+
+#come chiave uso la funcion qui sopra che torna il nome dello studente, si puo fare in python
+for student in sorted(students, key=get_name):#in python puoi fassare una funzione direttamente dentro un altra
+    print(f"{student['name']} is in {student['house']}")
