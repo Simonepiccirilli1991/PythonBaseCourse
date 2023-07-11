@@ -33,3 +33,18 @@ for name in sorted(names):
 with open("names.txt") as file:
     for line in sorted(file):
         print(f"hello, {line}")
+
+# se volessimo settare piu valori come la casa di appartenenza possiamo usare un file .csv
+# csv sta per comma separete value e separa i valori nella stessa riga usando ,(comma)
+#percio supponiamo ci sia un file csv students.csv scritto cosi:
+# Harry,Gryffindor
+# Draco,Slytherin
+with open("students.csv") as file:
+    for line in file:
+        row = line.rstrip().split(",") #splitto dal comma e diventano una specie di array
+        print(f"{row[0]} is in {row[1]}")
+
+# in python si posso assegnare 2 o + variabili e un file che sara splittato
+with open("students.csv") as file:
+    name, house = line.rstrip().split(",") #siccome so gia che i valori sono 2, assegno a 2 variabili
+    print(f"{name} is in {house}")
