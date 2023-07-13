@@ -69,3 +69,9 @@ def get_name(student):
 #come chiave uso la funcion qui sopra che torna il nome dello studente, si puo fare in python
 for student in sorted(students, key=get_name):#in python puoi fassare una funzione direttamente dentro un altra
     print(f"{student['name']} is in {student['house']}")
+
+# anziche usare la get_name possiamo creare una lamba cosi:
+for student in sorted(students, key=lambda student: student["name"]):#in python una lamba e cosi, stiamo passando i valori name come chiave
+    print(f"{student['name']} is in {student['house']}")
+
+#TODO: continua in names_pt2
