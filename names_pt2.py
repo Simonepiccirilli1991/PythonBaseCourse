@@ -22,3 +22,17 @@ with open("students.csv") as file:
 
 for student in sorted(students, key=lambda student: student["home"]):
     print(f"{student['name']} is in {student['home']}")
+
+
+#se invece volesso scrivere nel nosrro file csv
+    name = input("What's ur name? ")
+    home = input("What's ur house? ")
+with open("students.csv", "a") as file: #passiamo a come argument per dirgli di appendere
+    writer = csv.writer(file)
+    writer.writerow([name, home])
+
+#possiamo farlo con un dictionary nella seguente maniera
+with open("students.csv", "a") as file: #passiamo a come argument per dirgli di appendere
+    writer = csv.DictWriter(file, fieldnames=["name", "home"])#dichiaro i filedName del file csv
+    writer.writerow({"home": home, "name": name})#avendo dichiarato i filed names sopra non importa ordine
+
