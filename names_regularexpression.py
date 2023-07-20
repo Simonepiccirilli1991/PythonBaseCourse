@@ -13,3 +13,10 @@ if re.search("^\w+@\w+\.edu$", email): #^ significa all'inizio della stringa, \w
     print("Valid")
 else:
     print("Invalid")
+
+#step up
+if re.search("^\w+@(\w+\.)?\w+\.edu$", email, flags= re.IGNORECASE): #^ significa all'inizio della stringa, \w vuol dire che e accettata ogni parola compreso_,
+    #@ divide l'oggetto email ,(\w+\.) indica any word + il. accettato nella parte dopo @, ? inidica che e opzionale, .edu$ indica che e obbligatorio finale
+    print("Valid")
+else:
+    print("Invalid")
