@@ -6,11 +6,14 @@ def get_student():
     name = input("Name: ")
     house = input("House: ")
     return name, house #in questo caso stiamo tornando una tuple, un unico oggetto con dentro 1 2 valori name e house è immutabile
-    # le parentesi nel return non sono obbligatorie le mettiamo per chiarezza
+#la tupla e immutabile nei valori che torna, non possono essere ovveridati , quindi se si vuole manipolare il dato va usata una lista
+
 
 #possiamo refactorarla come segue:
 def main2():
     student = get_student()
     print(f"{student[0]} from {student[1]}") # so gia il valore di ritorno della tupla, posso prenderli come una lista
+
+
 if __name__ == "__main__":
     main()
