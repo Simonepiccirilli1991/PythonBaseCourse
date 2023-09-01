@@ -1,5 +1,7 @@
-class Student:
-    ...
+class Student:  #<- in py dentro le classi devi definire il costruttore come sotto, e si usa self di prassi oltre i vari parametri
+    def __init__(self, name, house):
+        self.name = name
+        self.house = house
 
 
 def main():
@@ -8,10 +10,10 @@ def main():
 
 
 def get_student():
-    student = Student()
-    student.name = input("What's ur name ")
-    student.house = input("What's ur house ")
-    return student
+
+    name = input("What's ur name ")
+    house = input("What's ur house ")
+    return Student(name, house)
 
 
 if __name__ == "__main__":
