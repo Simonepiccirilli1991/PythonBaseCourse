@@ -2,14 +2,24 @@ class Student:  #<- in py dentro le classi devi definire il costruttore come sot
     def __init__(self, name, house, patronus):
         if not name:
             raise ValueError("Missing name")
-        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
-            raise ValueError("Invalid house")
         self.name = name
         self.house = house
         self.patronus = patronus
 # __str__ serve a fare il toString custom volendo, viene chiamata di defualt se vuoi prontare oggetto
     def __str__(self):
         return f"{self.name} from {self.house}"
+
+    #getter, su getter si usa property come annotation
+    @property
+    def house(self):
+        return self._house
+
+    #setter
+    @house.setter
+    def house(self, house):#nel setter posso mettere logica
+        if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
+            raise ValueError("Invalid house")
+        self._house = house
 
     #metodo per far apparire emoji a seconda del patronus, mancano le emoji pero rende l'idea
     def charm(self):
