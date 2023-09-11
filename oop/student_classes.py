@@ -1,7 +1,5 @@
 class Student:  #<- in py dentro le classi devi definire il costruttore come sotto, e si usa self di prassi oltre i vari parametri
     def __init__(self, name, house, patronus):
-        if not name:
-            raise ValueError("Missing name")
         self.name = name
         self.house = house
         self.patronus = patronus
@@ -20,6 +18,17 @@ class Student:  #<- in py dentro le classi devi definire il costruttore come sot
         if house not in ["Gryffindor", "Hufflepuff", "Ravenclaw", "Slytherin"]:
             raise ValueError("Invalid house")
         self._house = house
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, name):
+        if not name:
+            raise ValueError("Missing name")
+
+        self._name = name
 
     #metodo per far apparire emoji a seconda del patronus, mancano le emoji pero rende l'idea
     def charm(self):
