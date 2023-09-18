@@ -2,7 +2,7 @@ import random
 
 
 class Hat:
-
+    #non usiamo init method perche questa classe non si istanzia . viene usata a mo di singleton
     house = ["Gryffindor, Slytherin", "Hafflepuff", "Ravenclaw"]#variabile di classe, accesibile alla classe
 
     @classmethod
